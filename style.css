@@ -1,0 +1,74 @@
+.side {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  padding-top: 20px;
+}
+
+.left {
+  width: 60%;
+  left: 0;
+  background-color: #001946;
+}
+
+.right {
+  width: 40%;
+  right: 0;
+  background-color: #fff;
+}
+
+.centro {
+  height: 100vh;
+}
+
+form {
+  max-width: 400px;
+}
+
+form input {
+  margin: 10px 0;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgb(233, 233, 233);
+}
+
+#logar {
+  background-color: #001946;
+  border-color: #001946;
+}
+
+.fpass {
+  color: #1281BF;
+  text-decoration: none;
+}
+
+.fpass i {
+  margin-right: 1rem;
+}
+
+.signup {
+  color: #1281BF;
+  text-decoration: none;
+}
+
+div.circulos-login {
+  position: fixed;
+  padding-top: 109vh;
+  margin-left: -64rem;
+}
+
+.circulo1 {
+  position: absolute;
+    margin-top: 8vh;
+    margin-left: 6rem;
+}
+
+.circulos {
+  background: transparent;
+  border: 1px solid #AE60EB;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+}
