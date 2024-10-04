@@ -1,0 +1,23 @@
+.topo {
+  background: #001946;
+}
+
+.form-control {
+  width: 20rem;
+}
+
+.btn-secondary {
+  border: none;
+  background-color: #001946;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  border: none;
+  background-color: #001946;
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+  border: none;
+  background-color: #001946;
+}
+
