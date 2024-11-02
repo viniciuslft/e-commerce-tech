@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  font-family: "Roboto", serif;
+}
+
+@media screen and (max-width: 864px) {
+  .funfMenu {
+    flex-wrap: wrap !important;
+  }
+}
+.funfMenu .logoIndex {
+  max-width: 12rem;
+}
+
+.successSignUp {
+  background-color: #001946;
+  height: 100vh;
+}
+.successSignUp .contentCenter {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.successSignUp .checkSuccess {
+  font-size: 2.8rem;
+}
+
+.side {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  padding-top: 20px;
+}
+
+.left {
+  width: 60%;
+  left: 0;
+  background-color: #001946;
+}
+
+.right {
+  width: 40%;
+  right: 0;
+  background-color: #fff;
+}
+
+.centro {
+  height: 100vh;
+}
+
+.formSign {
+  max-width: 400px;
+}
+.formSign input {
+  margin: 10px 0;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgb(233, 233, 233);
+}
+
+.submitSign {
+  background-color: #001946;
+  border-color: #001946;
+}
+
+.submitEmail {
+  background-color: #3b79e4;
+  border-color: #3b79e4;
+  width: 9rem;
+  max-height: 2.5rem;
+}
+
+.fpass {
+  color: #1281BF;
+  text-decoration: none;
+}
+.fpass i {
+  margin-right: 1rem;
+}
+
+.signup {
+  color: #1281BF;
+  text-decoration: none;
+}
+
+.circulos-login {
+  position: fixed;
+  padding-top: 109vh;
+  margin-left: -64rem;
+}
+
+.circulo1 {
+  position: absolute;
+  margin-top: 8vh;
+  margin-left: 6rem;
+}
+
+.circulos {
+  background: transparent;
+  border: 1px solid #AE60EB;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+}
+
+.ofertaEmail {
+  background: #001946;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+}
+.ofertaEmail .form-label {
+  margin-right: 6rem;
+}
+
+.topo {
+  background: #001946;
+}
+
+.form-control {
+  width: 20rem;
+}
+
+.btn-secondary {
+  border: none;
+  background-color: #001946;
+  color: #fff;
+}
+.btn-secondary:hover {
+  border: none;
+  background-color: #001946;
+}
+
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  border: none;
+  background-color: #001946;
+}
+
+.blocoCadLog {
+  font-size: 0.9rem;
+}
+
+.card {
+  max-width: 14rem;
+  transition: transform 0.2s ease;
+}
+.card .freteGratis {
+  background-color: #001946;
+  font-size: 0.7rem;
+  padding: 0.2rem;
+}
+.card .infoParcelaCard {
+  font-size: 0.8rem;
+}
+.card .valorProduto {
+  color: #001946;
+}
+.card .valorReaisProduto {
+  font-weight: 500;
+}
+.card .valorParcela {
+  color: #3d7ac9;
+}
+.card a {
+  text-decoration: none;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+
+.infoProdutoPage #adicionarCarrinhoProduto {
+  background-color: #001946;
+  border-color: #001946;
+}
+.infoProdutoPage #adicionarCarrinhoProduto .textoadicionarcarrinho {
+  font-size: 0.7rem;
+}
+.infoProdutoPage .consultaFrete #CEP {
+  text-align: center;
+}
+.infoProdutoPage .consultaFrete #CEP:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+.infoProdutoPage .consultaFrete #submitCEP {
+  background-color: #001946;
+  border-color: #001946;
+}
+.infoProdutoPage .infoDisponibilidade {
+  color: #23A057;
+}
+
+.conteudoListaDesejos .infoProdutoListaDesejo {
+  height: 12rem;
+}
+.conteudoListaDesejos .imgProdutoFavorited {
+  max-height: 100%;
+  object-fit: contain;
+  margin: auto 0px;
+  width: 6.6875rem;
+  max-width: none;
+}
+.conteudoListaDesejos .marcaProdutoFavorited {
+  font-size: 0.8rem;
+}
+
+/*# sourceMappingURL=style.css.map */
