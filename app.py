@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from postgres import connect
 
@@ -14,7 +14,7 @@ def register():
 
         email = request.form.get('email')
         password = request.form.get('password')
-        print(f"a senha é {password}")
+       
         hashed_password = generate_password_hash(password) #gera o hash da senha
         #dataNascimento = request.form['dataN']
 
@@ -58,10 +58,10 @@ def login():
 
             if user:
                 hashed_password = user[0]
-                print(f"Hash da senha encontrado: {hashed_password}")
-
+                
                 # Verifica se a senha inserida confere com o hash armazenado
                 if check_password_hash(hashed_password, password):
+                    session['user'] = email
                     flash('Login realizado com sucesso!')
                     return redirect(url_for('index'))  # Redireciona para a página inicial (index)
                 else:
@@ -83,7 +83,19 @@ def login():
 
 @app.route('/index')
 def index():
-    return render_template('index.html')
+
+    user_email = session.get('user')  # Obtém o e-mail do usuário da sessão, se disponível
+    welcome_message = f"Bem-vindo, {user_email}" if user_email else None
+    return render_template('index.html', welcome_message=welcome_message)
+
+
+@app.route('/logout')
+def logout():
+    session.pop('user', None)
+    flash('Logout feito com sucesso')
+    return redirect(url_for('logout'))
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
