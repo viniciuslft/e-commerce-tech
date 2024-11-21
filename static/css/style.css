@@ -198,18 +198,66 @@ body {
   color: #23A057;
 }
 
-.conteudoListaDesejos .infoProdutoListaDesejo {
-  height: 12rem;
+.conteudoListaDesejos .containerProduto {
+  width: 60rem;
 }
-.conteudoListaDesejos .imgProdutoFavorited {
-  max-height: 100%;
-  object-fit: contain;
-  margin: auto 0px;
-  width: 6.6875rem;
-  max-width: none;
+.conteudoListaDesejos .imgProduto {
+  max-width: 150px;
+  height: auto;
 }
-.conteudoListaDesejos .marcaProdutoFavorited {
-  font-size: 0.8rem;
+.conteudoListaDesejos .imgProduto img {
+  width: 100%;
+}
+
+.imgProduto {
+  max-width: 350px;
+  height: auto;
+}
+.imgProduto img {
+  width: 100%;
+}
+
+#cadastroProdutoContainer {
+  width: 60rem;
+}
+#cadastroProdutoContainer textarea.form-control {
+  max-height: 10rem;
+}
+#cadastroProdutoContainer #clearInputs {
+  background-color: transparent;
+  border-color: #000;
+  color: #000;
+}
+#cadastroProdutoContainer .clearInputs {
+  background-color: transparent;
+  border-color: #000;
+  color: #000;
+}
+#cadastroProdutoContainer #dragandrop {
+  border: 0.1rem dashed #9d9d9d;
+}
+#cadastroProdutoContainer .inputbox {
+  max-width: 300px;
+  background: #fff;
+  border: 1px solid #CED4DA;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+#cadastroProdutoContainer .focus {
+  transition: 0.1s;
+  border: 1px solid #86b7fe;
+  border-radius: 0.375rem;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+#cadastroProdutoContainer .inputbox input {
+  flex-grow: 1;
+  background: #fff;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=style.css.map */

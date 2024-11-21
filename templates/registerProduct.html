@@ -20,7 +20,7 @@
         <div class="container pt-3">
           <div class="funfMenu d-flex flex-wrap pt-4 align-items-center justify-content-center justify-content-lg-start">
             <a href="index.html" class="logoIndex d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-              <img class="w-100" src="../static/assets/img/logoFundoajustado.png" alt="">
+              <img class="w-100" src="../static/assets/img/logoFundoajustado.png" alt="" width="150px">
             </a>
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
               <li class="d-flex align-items-center">
@@ -124,101 +124,84 @@
     <!---------------------------------->
   </header>
   <main>
-    <!-- INFORMAÇÕES DO PRODUTO CLICADO -->
-    <div class="d-flex flex-row justify-content-center align-items-center p-5">
-      <div class="imgProduto">
-        <img class="imgProduto" src="../static/assets/img/produtos/headset.png" alt="">
-      </div>
-      <div class="infoProdutoPage d-flex flex-column gap-2">
+    <form action="post">
+      <div class="d-flex flex-column p-4 gap-3 justify-content-center align-items-center">
         <div>
-          <div class="nomeProduto mb-0 h2">
-            <span>Headset Gamer - Preto e Verde </span>
-          </div>
-          <div class="infoDisponibilidade">
-            <span>Produto Disponível</span>
-          </div>
+          <i></i>
+          <span class="h2">Cadastro de Produto</span>
         </div>
-        <div class="valorProdutoOriginal">
-          <del><span>R$120,00</span></del>
-        </div>
-        <div class="d-flex flex-row gap-4">
-          <div class="valorProdutoAtual">
-            <span class="h2">R$100,00</span>
-          </div>
-            <div class="adicionarCarrinho">
-              <button id="adicionarCarrinhoProduto" class="btn btn-primary btn-lg d-flex flex-row justify-content-center align-items-center">
-                <i class="fa-solid fa-cart-plus fa-xl pe-3"></i>
-                <div class="d-flex flex-column">
-                  <span class="fs-5">COMPRAR</span>
-                  <span class="textoadicionarcarrinho">Adicionar ao Carrinho</span>
-                </div>
-              </button>
+        <div id="cadastroProdutoContainer" class="d-flex flex-row gap-4 p-4 border border-1 shadow-lg p-3 mb-5 bg-body rounded">
+          <div class="d-flex flex-column gap-4 p-4">
+            <div class="d-flex flex-column">
+              <label class="h5 me-3" for="nomeProduto">Nome</label>
+              <input type="text" class="form-control" name="nomeProduto" id="nomeProduto" placeholder="Digite o nome" required>
             </div>
-        </div>
-        <div class="infoPagamentoValor py-3">
-          <span>Em até <strong>12x</strong> com juros no cartão</span><br>
-          <span>Ou a vista no PIX ou boleto bancário</span>
-        </div>
-        <div class="consultaFrete d-flex flex-row">
-          <form action="">
-            <label for="CEP" class="d-flex flex-column">
-              Consulta de Frete
-              <div class="d-flex flex-row gap-2">
-                <input class="rounded-1 border border-3" type="text" name="CEP" id="CEP" placeholder="Inserir CEP" required pattern="\d{5}-\d{3}"/>
-                <input id="submitCEP" type="submit" value="OK" class="btn btn-primary">
+            <div class="d-flex flex-column">
+              <label class="h5 me-4" for="descricaoProduto">Descrição</label>
+              <div class="d-flex flex-column">
+                <textarea name="descricaoProduto" class="form-control" id="descricaoProduto" maxlength="120" placeholder="Digite a descrição" required></textarea>
+                <span class="d-flex flex-row"><div id="contagemCaracteres" class="me-1 text">120</div> caracteres restantes</span>
               </div>
-            </label>
-          </form>
+            </div>
+            <div class="d-flex flex-column">
+              <label class="h5 me-3" for="precoProduto">Preço</label>
+              <div class="inputbox input-group d-flex align-items-baseline" id="inputGroupFocus">
+                <span class="text-muted">R$</span>
+                <input type="text" class="form-control" name="precoProduto" id="precoProduto" placeholder="Digite o preço" required>
+              </div>
+            </div>
+
+            <!-- <div class="d-flex">
+              <span class="prefix">R$</span>
+              <input type="text" name="precoProduto" id="precoProduto" placeholder="Digite o preço do produto">
+            </div> -->
+
+            <div class="d-flex flex-column">
+              <label class="h5 me-3" for="quantidadeProduto">Quantidade em Estoque</label>
+              <input type="number" class="form-control" name="quantidadeProduto" id="quantidadeProduto" placeholder="Digite a quantidade" required>
+            </div>
+
+            <div class="d-flex flex-column">
+              <label class="h5 me-3" for="categoriaProduto">Categoria</label>
+              <select id="categoriaProduto" class="form-select form-control" aria-label="Default select example" aria-placeholder="Escolha uma categoria" required>
+                <option value=""></option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+              </select>
+            </div>
+
+            <div class="d-flex justify-content-end gap-2">
+              <button id="clearInputs" class="btn btn-primary px-3">Limpar</button>
+              <!-- <button id="cadastrarProduto" class="btn btn-primary submitSign px-3">Cadastrar</button> -->
+              <input type="submit" id="cadastrarProduto" value="Cadastrar" class="btn btn-primary submitSign px-3">
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-center w-100">
+            <div id="dragandrop" class="d-flex flex-column justify-content-center gap-5 h-50 align-items-center w-75 drag-area">
+              <img src="../static/assets/img/image-plus-svgrepo-com.svg" alt="">
+              <div class="d-flex flex-column justify-content-center align-items-center gap-3">
+                  <span class="text-muted">Selecione o arquivo ou arraste aqui.</span>
+                <button  class="file-input-button clearInputs btn btn-primary w-50">Abrir Arquivo</button>
+              </div>
+              <input type="file" class="file-input" hidden/>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- CATEGORIA PRODUTOS RELACIONADOS -->
-    <div id="produtosOfertas" class="px-4">
-      <h2>Produtos Relacionados</h2>
-      <div id="produtosOfertCard" class="p-2 d-flex flex-row gap-4">
-        <div class="card shadow p-1 mb-5 bg-body rounded">
-          <a href="#" class="text-black">
-            <img src="../static/assets/img/produtos/headset.png" class="card-img-top" alt="...">
-            <!-- <img src="../static/assets/img/produtos/emptyProduct.png" class="card-img-top" alt="..."> -->
-            <div class="card-body d-flex flex-column gap-2">
-              <div class="d-flex flex-row justify-content-between">
-                <span class="freteGratis w-50 text-center text-white rounded-pill ">Frete grátis</span>
-                <div class="favoritarProduto">
-                  <i id="favorite-product-${productId}" class="favoritoEmpty fa-regular fa-heart"></i>
-                  <i id="favorite-product-filled-${productId}" class="favoritoFavorite fa-solid fa-heart d-none"></i>
-                </div>
-              </div>
-              <h6 class="card-title mb-0">Headeset Gamer - Preto e Verde </h6>
-              <span class="valorProduto">
-                R$
-                <span class="valorReaisProduto fs-4">
-                  120,00
-                </span>
-              </span>
-              <span class="infoParcelaCard">
-                em até 4x de
-                <span class="valorParcela">
-                  R$30,00
-                </span> 
-                no cartão
-              </span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <!---------------------------------->
+    </form>
   </main>
   <footer>
     <!-- RECEBIMENTO DE OFERTA POR E-MAIL -->
-    <form action="post">
+    <!-- <form action="post">
       <div class="ofertaEmail p-4 fs-5 w-100 gap-4 d-flex flex-row justify-content-center align-items-center">
         <i class="fa-regular fa-envelope fa-xl"></i>
         <label for="inputRecebimentoEmail" class="form-label">Receba nossas ofertas por E-mail</label>
         <input type="email" name="email" id="inputRecebimentoEmail" class="form-control" placeholder="Digite seu E-mail" required>
         <button type="submit" class="btn btn-primary btn-lg submitEmail fs-6 d-flex align-items-center justify-content-center">Cadastrar</button>
       </div>
-    </form>
+    </form> -->
     <!---------------------------------->
   </footer>
 </body>
