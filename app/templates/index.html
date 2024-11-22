@@ -33,24 +33,27 @@
                     <i class="fa-regular fa-user fa-xl" style="color: #ffffff;"></i>
                   </a>
 
-                  {% if welcome_message %}
-                  <!-- Div exibida quando o usuário está logado -->
-                  <div class="d-flex" id="loged">
-                      <span class="text-light">{{ welcome_message }}</span>
-                      <a href="{{ url_for('logout') }}" class="text-decoration-none text-light ms-2">Sair</a>
-                  </div>
-                  {% else %}
-                  <!-- Div exibida quando o usuário não está logado -->
-                  <div class="d-flex" id="default">
-                      <span>
-                          <a href="{{ url_for('login') }}" class="text-decoration-none text-light text-primary text-opacity-75">ENTRE</a>
-                          ou
-                          <br>
-                          <a href="{{ url_for('register') }}" class="text-decoration-none text-light text-primary text-opacity-75">CADASTRE-SE</a>
-                      </span>
-                  </div>
-                  
-                  {%endif%}
+                  {% if user_email %}
+    <!-- Div exibida quando o usuário está logado -->
+    <div class="d-flex" id="loged">
+        <span class="text-light">Bem-vindo, {{ user_email }}</span>
+        <a href="{{ url_for('auth.logout') }}" class="text-decoration-none text-light ms-2">Sair</a>
+    </div>
+
+{% else %}
+<!-- Div exibida quando o usuário não está logado -->
+<div class="d-flex" id="default">
+  <span>
+    <a href="{{ url_for('auth.login') }}" class="text-decoration-none text-light text-primary text-opacity-75">ENTRE</a>
+    ou
+    <br>
+    <a href="{{ url_for('auth.register') }}"
+      class="text-decoration-none text-light text-primary text-opacity-75">CADASTRE-SE</a>
+  </span>
+</div>
+{% endif %}
+
+
 
                 </div>
               </li>
