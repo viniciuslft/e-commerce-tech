@@ -22,13 +22,17 @@ def register():
             flash('Email já registrado.', 'danger')
             return render_template('signup.html')
 
-        new_user = User(email=email)
-        new_user.set_password(password)
-        db.session.add(new_user)
-        db.session.commit()
+        try:
+            new_user = User(email=email)
+            new_user.set_password(password)
+            db.session.add(new_user)
+            db.session.commit()
 
-        flash('Cadastro realizado com sucesso!', 'success')
-        return redirect(url_for('auth.login'))
+            flash("Cadastro realizado com sucesso!", 'success')
+            return redirect(url_for('auth.login'))
+        
+        except Exception as e:
+            print("Houve um erro de conexação com o banco de dados: " + str(e))
 
     return render_template('signup.html')
 
@@ -72,4 +76,9 @@ def index():
     user_email = session.get('user')
     print(user_email)
     return render_template('index.html', user_email=user_email)
+
+
+
+def clearMessage():
+    
    

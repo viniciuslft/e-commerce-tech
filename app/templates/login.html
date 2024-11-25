@@ -25,6 +25,17 @@
       <div class="centro p-5 text-center d-flex flex-column gap-3 justify-content-center align-items-center">
         <form id="formSignIn" action="/login" method="POST" class="d-flex flex-column gap-3 formSign">
           <h2>LOGIN</h2>
+          {% block content %}
+
+            {%with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for msg in messages %}
+                  <p>{{msg}}</p>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+
+          {% endblock %}
           <input type="email" placeholder="Email" aria-describedby="emailHelp" name="email" required>
           <input type="password"  placeholder="Senha" name="password" required>
           <span>Não tem uma conta? <a class="signup" href="signup.html">Cadastre-se</a></span>

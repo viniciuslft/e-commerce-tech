@@ -14,6 +14,19 @@
   </head>
   <body>
     <header>
+      {% block content %}
+
+      {%with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for msg in messages %}
+            <div class="flash-message">
+              <center><p>{{msg}}</p></center>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+    {% endblock %}
       <div class="topo px-3 text-white">
         <!------- FUNCIONALIDADES MENU -------->
         <div class="container pt-3">
