@@ -23,17 +23,24 @@
     </div>
     <div class="right side">
       <div class="centro p-5 text-center d-flex flex-column gap-3 justify-content-center align-items-center">
-        <form id="formSignUp" action="/register" method="POST" class="d-flex flex-column gap-3 formSign">
-          <h2>CRIE SUA CONTA</h2>
+        <form id="formSignIn" action="/login" method="POST" class="d-flex flex-column gap-3 formSign">
+          <h2>LOGIN</h2>
+          {% block content %}
+
+            {%with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for msg in messages %}
+                  <p>{{msg}}</p>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+
+          {% endblock %}
           <input type="email" placeholder="Email" aria-describedby="emailHelp" name="email" required>
-          <input type="password" placeholder="Senha" name="password" required>
-          <input type="password" name="confirm_password" placeholder="Confirme sua Senha" required>
-          <div class="d-flex flex-column text-start">
-            <label for="DataNascimento">Data de Nascimento:</label>
-            <input type="date" name="" id="" placeholder="Data">
-          </div>
-          <span class="text-center">Já tem uma conta? <a class="signup" href="login.html">Faça o login</a></span>
-          <button id="signUp" class="btn btn-primary btn-lg submitSign">Cadastrar</button>
+          <input type="password"  placeholder="Senha" name="password" required>
+          <span>Não tem uma conta? <a class="signup" href="signup.html">Cadastre-se</a></span>
+          <a class="fpass" href="forgotpass.html">Esqueceu a senha?</a>
+          <button id="signIn" class="btn btn-primary btn-lg submitSign">Entrar</button>
               <div class="text-muted text-center fs-6"><span>Ao criar uma conta você está concordando com nossos <a class="text-reset" href="">Termos de Uso</a> e nossa <a class="text-reset" href="">Política de Privacidade</a>.</span></div>
         </form>
       </div>
