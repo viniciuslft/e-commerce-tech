@@ -14,6 +14,8 @@ def register():
         password = request.form.get('password')
         confirm_password = request.form.get('confirm_password')
 
+        nome = request.form.get()
+
         if password != confirm_password:
             flash('As senhas não coincidem.', 'danger')
             return render_template('signup.html')
@@ -43,7 +45,7 @@ def register():
 
 #cadastro de produto
 @auth_bp.route('/productRegister', methods = ['GET', 'POST'])
-def register():
+def registerP():
     if request.method == 'POST':
         name = request.form.get('name')
         description = request.form.get('description')
