@@ -9,16 +9,6 @@ body {
   font-family: "Roboto", serif;
 }
 
-.funfMenu {
-  @media screen and (max-width: 864px) {
-    flex-wrap: wrap !important;
-  };
-
-  .logoIndex {
-    max-width: 12rem;
-  }
-}
-
 .successSignUp {
   background-color: $primary-color;
   height: 100vh;
@@ -62,7 +52,6 @@ body {
   max-width: 400px;
 
   input {
-    margin: 10px 0;
     border: none;
     padding: 15px;
     border-radius: 5px;
@@ -97,9 +86,9 @@ body {
 }
 
 .circulos-login {
-  position: fixed;
-  padding-top: 109vh;
-  margin-left: -64rem;
+  position: absolute;
+  padding-top: 105vh;
+  margin-left: -55rem;
 }
 
 .circulo1 {
@@ -116,6 +105,54 @@ body {
   height: 400px;
 }
 
+.logoResponsivo {
+  display: none;
+}
+
+.funfMenu {
+  @media screen and (max-width: 864px) {
+    flex-wrap: wrap !important;
+  };
+
+  .logoIndex {
+    max-width: 12rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .centro {
+    height: 90vh;
+  }
+
+  .logoResponsivo {
+    display: block;
+  }
+
+  .left {
+    display: none; // Esconde o lado esquerdo
+  }
+  .right {
+    color: white;
+    width: 100% !important; // Faz o lado direito ocupar a tela inteira
+    left: 0;
+    right: 0;
+    background-color: $primary-color;
+  }
+
+  .dataN.text-muted {
+    color: white !important;
+  }
+
+  .termosInfo.text-muted {
+    color: white !important;
+  }
+
+  .submitSign {
+    border-color: $branco;
+  }
+}
+
 .ofertaEmail {
   background: $primary-color;
   left: 0;
@@ -128,10 +165,6 @@ body {
 
 .topo {
   background: $primary-color;
-}
-
-.form-control {
-  width: 20rem;
 }
 
 .btn-secondary {
@@ -213,32 +246,96 @@ body {
     #submitCEP {
       background-color: $primary-color;
       border-color: $primary-color;
-      
     }
-
 }
 
   .infoDisponibilidade {
     color: #23A057;
   }
-
-  
 }
 
 .conteudoListaDesejos {
-
-  .infoProdutoListaDesejo {
-    height: 12rem;
+  .containerProduto {
+    width: 60rem;
   }
 
-  .imgProdutoFavorited {
-    max-height: 100%;
-    object-fit: contain;
-    margin: auto 0px;
-    width: 6.6875rem;
-    max-width: none;
-  }
-  .marcaProdutoFavorited {
-    font-size: 0.8rem;
+  .imgProduto {
+    max-width: 150px;
+    height: auto;
+    img {
+      width: 100%;
+    }
   }
 }
+
+.imgProduto {
+  max-width: 350px;
+  height: auto;
+  img {
+    width: 100%;
+  }
+}
+
+#cadastroProdutoContainer {
+
+  width: 60rem;
+
+  textarea.form-control {
+    max-height: 10rem;
+  }
+
+  // .file-input-button {
+  //   background: none;
+  //   color: inherit;
+  //   border: none;
+  //   padding: 0;
+  //   font: inherit;
+  //   font-weight: 500;
+  //   cursor: pointer;
+  //   outline: inherit;
+  // }
+
+  #clearInputs {
+    background-color: transparent;
+    border-color: #000;
+    color: #000;
+  }
+  .clearInputs {
+    background-color: transparent;
+    border-color: #000;
+    color: #000;
+  }
+
+  #dragandrop {
+    border: 0.1rem dashed #9d9d9d;
+
+  }
+
+  .inputbox {
+    max-width: 300px;
+    background: #fff;
+    border: 1px solid #CED4DA;
+    border-radius: 4px;
+    padding-left: 0.5rem;
+    overflow: hidden;
+    font-family: sans-serif;
+    
+  }
+
+  .focus {
+    transition: 0.1s;
+    border: 1px solid #86b7fe;
+    border-radius: 0.375rem;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+
+  .inputbox input {
+    flex-grow: 1;
+    background: #fff;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    box-shadow: none;
+  }
+}
+

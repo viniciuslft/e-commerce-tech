@@ -124,74 +124,56 @@
     <!---------------------------------->
   </header>
   <main>
-    <div class="conteudoListaDesejos p-4">
-      <div class="d-flex align-items-baseline gap-2">
-        <i class="fa-solid fa-heart fa-xl"></i>
-        <span class="h4 text-decoration-underline">
-          Lista de Desejos
-        </span>
+    <div class="conteudoListaDesejos p-4 d-flex flex-row align-items-center">
+      <div class="m-auto">
+        <div class="d-flex align-items-baseline gap-2">
+          <i class="fa-solid fa-heart fa-xl" style="color: #001946;"></i>
+          <span class="h4">FAVORITOS</span>
+        </div>
+          <div class="containerProduto mt-3 d-flex flex-wrap border border-1 gap-4 p-3">
+            <div class="imgProduto">
+              <img src="../static/assets/img/produtos/headset.png" alt="">
+            </div>
+            <div class="d-flex flex-column">
+              <div>
+                <span class="h6">
+                  Razer
+                </span>
+              </div>
+              <span class="h5">
+                Headset Gamer - Preto e Verde
+              </span>
+              <div class="d-flex flex-row mt-auto gap-2 align-items-center">
+                <button class="btn btn-primary submitSign">Excluir <i class="fa-solid fa-trash ms-2"></i></button>
+                
+                <button class="btn btn-primary submitSign">Comprar Agora</button>
+              </div>
+            </div>
+            <div class="align-self-center ms-auto d-flex flex-column">
+                <span class="h6">
+                  R$120,00
+                </span>
+                <span class="h4">
+                  R$100,00
+                </span>
+            </div>
+            <div>
+              <i class="fa-solid fa-heart fa-xl" style="color: #001946;"></i>
+            </div>
+          </div>
       </div>
-
-      <div class="infoProdutoListaDesejo border border-1 d-flex flex-row">
-        <div class="d-flex align-items-center justify-content-center">
-          <img class="imgProdutoFavorited" src="../static/assets/img/produtos/headset.png" alt="">
-        </div>
-
-        <div class="d-flex flex-column justify-content-around">
-          <div class="nomeProdutoFavorited">
-            <div class="marcaProdutoFavorited text-align-start text-muted">
-              <span>Razer</span>
-            </div>
-            <span>Headeset Gamer - Preto e Verde </span>
-          </div>
-
-          <div class="d-flex flex-row align-items-baseline gap-2">
-            <div class="excluirProdutoFavorited">
-              <button id="excluirProdutoFavorited" class="btn btn-primary btn-lg d-flex flex-row justify-content-center align-items-center">
-                <i class="fa-solid fa-trash pe-3"></i>
-                  <span class="fs-6">Excluir</span>
-              </button>
-            </div>
-            <div class="comprarProdutoFavorited">
-              <button id="comprarProdutoFavorited" class="btn btn-primary btn-lg d-flex flex-row justify-content-center align-items-center">
-                <i class="fa-solid fa-cart-plus pe-3"></i>
-                  <span class="fs-6">COMPRAR</span>
-              </button>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="ms-auto me-auto d-flex justify-content-center align-items-center">
-          <div class="valorAtualProdutoFavorited d-flex">
-            <span>
-              R$
-            </span>
-            <span class="valorReaisAtualProdutoFavorited">
-              100,00
-            </span>
-          </div>
-          <!-- <div class="valorOriginalProdutoFavorited">
-
-          </div> -->
-        </div>
-        <div class="p-2">
-          <i class="fa-solid fa-heart fa-xl"></i>
-        </div>
-      </div>
-
     </div>
   </main>
   <footer>
     <!-- RECEBIMENTO DE OFERTA POR E-MAIL -->
-    <form action="post">
+    <!-- <form action="post">
       <div class="ofertaEmail p-4 fs-5 w-100 gap-4 d-flex flex-row justify-content-center align-items-center">
         <i class="fa-regular fa-envelope fa-xl"></i>
         <label for="inputRecebimentoEmail" class="form-label">Receba nossas ofertas por E-mail</label>
         <input type="email" name="email" id="inputRecebimentoEmail" class="form-control" placeholder="Digite seu E-mail" required>
         <button type="submit" class="btn btn-primary btn-lg submitEmail fs-6 d-flex align-items-center justify-content-center">Cadastrar</button>
       </div>
-    </form>
+    </form> -->
     <!---------------------------------->
   </footer>
 </body>
