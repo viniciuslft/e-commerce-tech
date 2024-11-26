@@ -14,6 +14,19 @@
   </head>
   <body>
     <header>
+      {% block content %}
+
+      {%with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for msg in messages %}
+            <div class="flash-message">
+              <center><p>{{msg}}</p></center>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+    {% endblock %}
       <div class="topo px-3 text-white">
         <!------- FUNCIONALIDADES MENU -------->
         <div class="container pt-3">
@@ -32,14 +45,29 @@
                   <a href="#" class="nav-link icones text-secondary">
                     <i class="fa-regular fa-user fa-xl" style="color: #ffffff;"></i>
                   </a>
-                  <div class="d-flex">
-                    <span>
-                      <a href="login.html" class="text-decoration-none text-light text-primary text-opacity-75">ENTRE</a>
-                      ou
-                      <br>
-                      <a href="signup.html" class="text-decoration-none text-light text-primary text-opacity-75">CADASTRE-SE</a>
-                    </span>
-                  </div>
+
+                  {% if user_email %}
+    <!-- Div exibida quando o usuário está logado -->
+    <div class="d-flex" id="loged">
+        <span class="text-light">Bem-vindo, {{ user_email }}</span>
+        <a href="{{ url_for('auth.logout') }}" class="text-decoration-none text-light ms-2">Sair</a>
+    </div>
+
+{% else %}
+<!-- Div exibida quando o usuário não está logado -->
+<div class="d-flex" id="default">
+  <span>
+    <a href="{{ url_for('auth.login') }}" class="text-decoration-none text-light text-primary text-opacity-75">ENTRE</a>
+    ou
+    <br>
+    <a href="{{ url_for('auth.register') }}"
+      class="text-decoration-none text-light text-primary text-opacity-75">CADASTRE-SE</a>
+  </span>
+</div>
+{% endif %}
+
+
+
                 </div>
               </li>
               <li>

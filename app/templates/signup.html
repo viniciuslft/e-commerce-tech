@@ -28,8 +28,9 @@
         </div>
       </a>
       <div class="centro p-5 text-center d-flex flex-column gap-3 justify-content-center align-items-center">
-        <form id="formSignUp" action="#" method="POST" class="d-flex flex-column gap-3 formSign">
+        <form id="formSignUp" action="/register" method="POST" class="d-flex flex-column gap-3 formSign">
           <h2>CRIE SUA CONTA</h2>
+<<<<<<< HEAD:templates/signup.html
           <div class="form-floating mb-2 text-muted">
             <input type="email" class="form-control m-0" id="floatingInput" placeholder="Nome" required>
             <label for="floatingInput text-muted">Nome</label>
@@ -50,6 +51,24 @@
             <input type="password" class="form-control m-0" id="floatingInput" placeholder="Confirme sua Senha" required>
             <label for="floatingPassword">Confirme sua Senha</label>
           </div>
+=======
+          {% block content %}
+
+      {%with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for msg in messages %}
+            <div class="flash-message">
+              <center><p>{{msg}}</p></center>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+    {% endblock %}
+          <input type="email" placeholder="Email" aria-describedby="emailHelp" name="email" required>
+          <input type="password" placeholder="Senha" name="password" required>
+          <input type="password" name="confirm_password" placeholder="Confirme sua Senha" required>
+>>>>>>> f10e7d96cdb1c97264ef936f0f9a2350c9cbddb7:app/templates/signup.html
           <div class="d-flex flex-column text-start">
             <label for="dataNascimento" class="dataN text-muted">Data de Nascimento:</label>
             <input type="date" name="dataNascimento" id="dataNascimento" placeholder="Data">

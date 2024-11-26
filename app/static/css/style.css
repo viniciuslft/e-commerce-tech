@@ -287,3 +287,19 @@ body {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+/*esse css serve para colocar um fade e algumas melhorias na mensagens que o usuario ve quando realiza determinada acao, depois voce ve o melhor lugar para deixar*/
+.flash-message{
+  opacity: 0;
+  transform: opacity 1s easy;
+}
+
+.flash-message.show{
+  opacity: 1;
+}
+
+.flash-message.hide{
+  opacity: 0;
+}
