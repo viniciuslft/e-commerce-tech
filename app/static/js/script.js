@@ -75,7 +75,7 @@ $(document).ready(function () {
     // window.location.reload();
   })
   
-  const maxCaracteres = 120;
+  const maxCaracteres = 255;
 
   $('#descricaoProduto').on('input', function(event) {
     event.preventDefault()

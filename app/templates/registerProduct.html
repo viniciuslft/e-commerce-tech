@@ -123,31 +123,31 @@
     </div>
     <!---------------------------------->
   </header>
-  <main>
-    <form action="post">
+  <main>productRegister">
       <div class="d-flex flex-column p-4 gap-3 justify-content-center align-items-center">
         <div>
           <i></i>
           <span class="h2">Cadastro de Produto</span>
         </div>
+
         <div id="cadastroProdutoContainer" class="d-flex flex-row gap-4 p-4 border border-1 shadow-lg p-3 mb-5 bg-body rounded">
           <div class="d-flex flex-column gap-4 p-4 w-100">
             <div class="d-flex flex-column">
               <label class="h5 me-3" for="nomeProduto">Nome</label>
-              <input type="text" class="form-control" name="nomeProduto" id="nomeProduto" placeholder="Digite o nome" required>
+              <input type="text" class="form-control" name="name" id="name" placeholder="Digite o nome" required>
             </div>
             <div class="d-flex flex-column">
               <label class="h5 me-4" for="descricaoProduto">Descrição</label>
               <div class="d-flex flex-column">
-                <textarea name="descricaoProduto" class="form-control" id="descricaoProduto" maxlength="120" placeholder="Digite a descrição" required></textarea>
-                <span class="d-flex flex-row text-muted"><div id="contagemCaracteres" class="me-1 text"><strong>120</strong></div> caracteres restantes</span>
+                <textarea name="dexcription" class="form-control" id="description" maxlength="255" placeholder="Digite a descrição" required></textarea>
+                <span class="d-flex flex-row text-muted"><div id="contagemCaracteres" class="me-1 text"><strong>255</strong></div> caracteres restantes</span>
               </div>
             </div>
             <div class="d-flex flex-column">
               <label class="h5 me-3" for="precoProduto">Preço</label>
               <div class="inputbox input-group d-flex align-items-baseline" id="inputGroupFocus">
                 <span class="text-muted">R$</span>
-                <input type="text" class="form-control" name="precoProduto" id="precoProduto" placeholder="Digite o preço" required>
+                <input type="text" class="form-control" name="price" id="price" placeholder="Digite o preço" required>
               </div>
             </div>
 
