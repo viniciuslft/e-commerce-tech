@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for,session
 from app import db
-from app.models import User
+from app.models import User, Client, Product
 
 auth_bp = Blueprint('auth', __name__)
 
@@ -26,6 +26,10 @@ def register():
             new_user = User(email=email)
             new_user.set_password(password)
             db.session.add(new_user)
+            
+
+            new_client = Client(email = email, nome = email)
+            db.session.add(new_client)
             db.session.commit()
 
             flash("Cadastro realizado com sucesso!", 'success')
@@ -37,7 +41,25 @@ def register():
     return render_template('signup.html')
 
 
+#cadastro de produto
+@auth_bp.route('/productRegister', methods = ['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        description = request.form.get('description')
+        price = request.form.get('price')
 
+        if Product.query.filter_by(nome = name).first():
+            flash('Produto ja cadastrado')
+            return render_template()
+        
+        try:
+            new_product = Product(nome = name, descricao = description, valor = price)
+            db.session.add(new_product)
+            db.session.commit()
+
+        except Exception as e:
+            print('Houve um erro de conexção com o banco de dados' + e)
 
 
 # Login de usuário
@@ -77,8 +99,3 @@ def index():
     print(user_email)
     return render_template('index.html', user_email=user_email)
 
-
-
-def clearMessage():
-    
-   
