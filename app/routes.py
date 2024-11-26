@@ -14,7 +14,8 @@ def register():
         password = request.form.get('password')
         confirm_password = request.form.get('confirm_password')
 
-        nome = request.form.get()
+        nome = request.form.get('name')
+        sobrenome = request.form.get('middleName')
 
         if password != confirm_password:
             flash('As senhas não coincidem.', 'danger')
@@ -30,7 +31,7 @@ def register():
             db.session.add(new_user)
             
 
-            new_client = Client(email = email, nome = email)
+            new_client = Client(email = email, nome = nome, sobrenome = sobrenome)
             db.session.add(new_client)
             db.session.commit()
 
@@ -45,23 +46,26 @@ def register():
 
 #cadastro de produto
 @auth_bp.route('/productRegister', methods = ['GET', 'POST'])
-def registerP():
+def registerProduct():
     if request.method == 'POST':
         name = request.form.get('name')
         description = request.form.get('description')
         price = request.form.get('price')
+        estoque = request.form.get('quantidadeProduto')
 
         if Product.query.filter_by(nome = name).first():
             flash('Produto ja cadastrado')
-            return render_template()
+            return render_template('registerProduct.html')
         
         try:
-            new_product = Product(nome = name, descricao = description, valor = price)
+            new_product = Product(nome = name, descricao = description, valor = price, estoque_disponivel = estoque)
             db.session.add(new_product)
             db.session.commit()
 
         except Exception as e:
-            print('Houve um erro de conexção com o banco de dados' + e)
+            print('Houve um erro de conexção com o banco de dados' + str(e))
+
+    return render_template('registerProduct.html')
 
 
 # Login de usuário
@@ -88,9 +92,6 @@ def logout():
     session.pop('user', None)  # Remove o e-mail da sessão
     flash('Você saiu com sucesso!', 'success')
     return redirect(url_for('main.index'))  # Redireciona para a página inicial
-
-
-
 
 # Página principal
 main_bp = Blueprint('main', __name__)

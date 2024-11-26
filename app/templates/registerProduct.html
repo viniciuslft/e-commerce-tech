@@ -123,13 +123,14 @@
     </div>
     <!---------------------------------->
   </header>
-  <main>productRegister">
+  <main>
+    <form action="/productRegister" method="post" enctype="multipart/form-data">
       <div class="d-flex flex-column p-4 gap-3 justify-content-center align-items-center">
         <div>
           <i></i>
           <span class="h2">Cadastro de Produto</span>
         </div>
-
+        
         <div id="cadastroProdutoContainer" class="d-flex flex-row gap-4 p-4 border border-1 shadow-lg p-3 mb-5 bg-body rounded">
           <div class="d-flex flex-column gap-4 p-4 w-100">
             <div class="d-flex flex-column">
@@ -139,7 +140,7 @@
             <div class="d-flex flex-column">
               <label class="h5 me-4" for="descricaoProduto">Descrição</label>
               <div class="d-flex flex-column">
-                <textarea name="dexcription" class="form-control" id="description" maxlength="255" placeholder="Digite a descrição" required></textarea>
+                <textarea name="dexcription" class="form-control" id="description" name = "description" maxlength="255" placeholder="Digite a descrição" required></textarea>
                 <span class="d-flex flex-row text-muted"><div id="contagemCaracteres" class="me-1 text"><strong>255</strong></div> caracteres restantes</span>
               </div>
             </div>
@@ -163,7 +164,7 @@
 
             <div class="d-flex flex-column">
               <label class="h5 me-3" for="categoriaProduto">Categoria</label>
-              <select id="categoriaProduto" class="form-select form-control" aria-label="Default select example" aria-placeholder="Escolha uma categoria" required>
+              <select id="categoriaProduto" class="form-select form-control" aria-label="Default select example" aria-placeholder="Escolha uma categoria">
                 <option value=""></option>
                 <option value="1"></option>
                 <option value="2"></option>
@@ -185,7 +186,7 @@
                   <span class="text-muted">Selecione o arquivo ou arraste aqui.</span>
                 <button  class="file-input-button clearInputs btn btn-primary w-50">Abrir Arquivo</button>
               </div>
-              <input type="file" class="file-input" hidden/>
+              <input type="file" id="image" name="image" class="file-input" hidden/>
             </div>
           </div>
         </div>
