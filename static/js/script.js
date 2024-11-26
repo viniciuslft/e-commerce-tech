@@ -82,7 +82,7 @@ $(document).ready(function () {
     const caracteresDigitados = $(this).val().length;
     const caracteresRestantes = maxCaracteres - caracteresDigitados;
 
-    $('#contagemCaracteres').text(caracteresRestantes); // Atualiza o contador
+    $('#contagemCaracteres strong').text(caracteresRestantes); // Atualiza o contador
   });
 
   $('#precoProduto').on('focus', function() {

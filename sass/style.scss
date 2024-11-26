@@ -9,16 +9,6 @@ body {
   font-family: "Roboto", serif;
 }
 
-.funfMenu {
-  @media screen and (max-width: 864px) {
-    flex-wrap: wrap !important;
-  };
-
-  .logoIndex {
-    max-width: 12rem;
-  }
-}
-
 .successSignUp {
   background-color: $primary-color;
   height: 100vh;
@@ -62,7 +52,6 @@ body {
   max-width: 400px;
 
   input {
-    margin: 10px 0;
     border: none;
     padding: 15px;
     border-radius: 5px;
@@ -97,9 +86,9 @@ body {
 }
 
 .circulos-login {
-  position: fixed;
-  padding-top: 109vh;
-  margin-left: -64rem;
+  position: absolute;
+  padding-top: 105vh;
+  margin-left: -55rem;
 }
 
 .circulo1 {
@@ -116,6 +105,54 @@ body {
   height: 400px;
 }
 
+.logoResponsivo {
+  display: none;
+}
+
+.funfMenu {
+  @media screen and (max-width: 864px) {
+    flex-wrap: wrap !important;
+  };
+
+  .logoIndex {
+    max-width: 12rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .centro {
+    height: 90vh;
+  }
+
+  .logoResponsivo {
+    display: block;
+  }
+
+  .left {
+    display: none; // Esconde o lado esquerdo
+  }
+  .right {
+    color: white;
+    width: 100% !important; // Faz o lado direito ocupar a tela inteira
+    left: 0;
+    right: 0;
+    background-color: $primary-color;
+  }
+
+  .dataN.text-muted {
+    color: white !important;
+  }
+
+  .termosInfo.text-muted {
+    color: white !important;
+  }
+
+  .submitSign {
+    border-color: $branco;
+  }
+}
+
 .ofertaEmail {
   background: $primary-color;
   left: 0;
@@ -128,10 +165,6 @@ body {
 
 .topo {
   background: $primary-color;
-}
-
-.form-control {
-  width: 20rem;
 }
 
 .btn-secondary {

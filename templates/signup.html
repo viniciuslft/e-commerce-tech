@@ -22,19 +22,41 @@
       </a>
     </div>
     <div class="right side">
+      <a href="index.html">
+        <div class="logoResponsivo ms-5">
+          <img src="../static/assets/img/logoFundoajustado.png" alt="" width="200px">
+        </div>
+      </a>
       <div class="centro p-5 text-center d-flex flex-column gap-3 justify-content-center align-items-center">
         <form id="formSignUp" action="#" method="POST" class="d-flex flex-column gap-3 formSign">
           <h2>CRIE SUA CONTA</h2>
-          <input type="email" placeholder="Email" aria-describedby="emailHelp" required>
-          <input type="password" name="Password" placeholder="Senha" required>
-          <input type="password" name="Password" placeholder="Confirme sua Senha" required>
+          <div class="form-floating mb-2 text-muted">
+            <input type="email" class="form-control m-0" id="floatingInput" placeholder="Nome" required>
+            <label for="floatingInput text-muted">Nome</label>
+          </div>
+          <div class="form-floating mb-2 text-muted">
+            <input type="email" class="form-control m-0" id="floatingInput" placeholder="Sobrenome" required>
+            <label for="floatingInput text-muted">Sobrenome</label>
+          </div>
+          <div class="form-floating mb-2 text-muted">
+            <input type="email" class="form-control m-0" id="floatingInput" placeholder="nome@exemplo.com" required>
+            <label for="floatingInput text-muted">Endereço de E-mail</label>
+          </div>
+          <div class="form-floating mb-2 text-muted">
+            <input type="password" class="form-control m-0" id="floatingInput" placeholder="Senha" required>
+            <label for="floatingPassword">Senha</label>
+          </div>
+          <div class="form-floating mb-2 text-muted">
+            <input type="password" class="form-control m-0" id="floatingInput" placeholder="Confirme sua Senha" required>
+            <label for="floatingPassword">Confirme sua Senha</label>
+          </div>
           <div class="d-flex flex-column text-start">
-            <label for="DataNascimento">Data de Nascimento:</label>
-            <input type="date" name="" id="" placeholder="Data">
+            <label for="dataNascimento" class="dataN text-muted">Data de Nascimento:</label>
+            <input type="date" name="dataNascimento" id="dataNascimento" placeholder="Data">
           </div>
           <span class="text-center">Já tem uma conta? <a class="signup" href="login.html">Faça o login</a></span>
           <button id="signUp" class="btn btn-primary btn-lg submitSign">Cadastrar</button>
-              <div class="text-muted text-center fs-6"><span>Ao criar uma conta você está concordando com nossos <a class="text-reset" href="">Termos de Uso</a> e nossa <a class="text-reset" href="">Política de Privacidade</a>.</span></div>
+              <div class="termosInfo text-muted text-center fs-6"><span>Ao criar uma conta você está concordando com nossos <a class="text-reset" href="">Termos de Uso</a> e nossa <a class="text-reset" href="">Política de Privacidade</a>.</span></div>
         </form>
       </div>
     </div>
