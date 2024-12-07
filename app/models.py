@@ -22,8 +22,9 @@ class Client(db.Model):
     __tablename__ = 'clientes'
 
     clientid = db.Column(db.Integer, primary_key = True)
-    nome = db.Column(db.String(120), unique = True, nullable = False)
-    sobrenome = db.Column(db.String(120), unique = True, nullable = False)
+    nome = db.Column(db.String(120), unique = False, nullable = False)
+    sobrenome = db.Column(db.String(120), unique = False, nullable = False)
+    email = db.Column(db.String(120), unique = True, nullable = False)
 
     
 
@@ -34,6 +35,8 @@ class Product(db.Model):
 
     produto_id = db.Column(db.Integer, primary_key = True)
     nome = db.Column(db.String(120), unique = True, nullable = False)
+    descricao = db.Column(db.String(255), unique = False, nullable = False)
     categoria = db.Column(db.String(120), unique = False, nullable = False)
-    valor = db.Column(db.Double, unique = False, nullable = False)
+    valor = db.Column(db.Float, unique = False, nullable = False)
     estoque_disponivel = db.Column(db.Integer, unique = False, nullable = False)
+    imagem = db.Column(db.LargeBinary, nullable=True)
